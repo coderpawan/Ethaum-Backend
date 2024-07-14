@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const cors = require("cors");
 require("./Model/User");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
@@ -48,6 +49,7 @@ app.use(function (err, req, res, next) {
   console.error(err.stack);
   res.status(500).send("Something broke!");
 });
+app.use(cors());
 
 // ############# GOOGLE AUTHENTICATION ################
 // this will call passport-setup.js authentication in the config directory
@@ -85,7 +87,7 @@ app.get(
       // Generate token
       const token = authService.signToken(req);
       console.log("Generated Token:", token); // Debugging statement
-      res.redirect(`https://ethaum.vercel.app/?token=${token}`);
+      res.redirect(`http://localhost:3000/?token=${token}`);
     } catch (err) {
       res.status(500).send("Error during authentication");
     }
