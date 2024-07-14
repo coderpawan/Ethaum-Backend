@@ -9,7 +9,7 @@ passport.use(
   new GoogleStrategy(
     {
       // options for strategy
-      callbackURL: "http://localhost:5000/auth/google/callback/",
+      callbackURL: "https://ethaum-backend.vercel.app/auth/google/callback/",
       clientID: process.env.CLIENT_ID,
       clientSecret: process.env.CLIENT_SECRET,
     },
