@@ -8,13 +8,11 @@ require("dotenv").config();
 passport.use(
   new GoogleStrategy(
     {
-      // options for strategy
-      callbackURL: "http://localhost:5000/auth/google/callback/",
+      callbackURL: "https://ethaum-backend.vercel.app/auth/google/callback/",
       clientID: process.env.CLIENT_ID,
       clientSecret: process.env.CLIENT_SECRET,
     },
     async (accessToken, refreshToken, profile, done) => {
-      // console.log("profile:", profile);
       const email = profile.emails[0].value;
       const picture = profile.photos[0].value;
       console.log(profile.displayName, picture);

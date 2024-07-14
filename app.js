@@ -74,20 +74,10 @@ app.get(
   passport.authenticate("google", { session: false }),
   async (req, res) => {
     try {
-      // Save user information to database
-      // const existingUser = await User.findOne({ googleId: req.user.id });
-      // if (!existingUser) {
-      //   const newUser = new User({
-      //     email: req.user.emails[0].value,
-      //     googleId: req.user.id,
-      //   });
-      //   await newUser.save();
-      // }
-
       // Generate token
       const token = authService.signToken(req);
       console.log("Generated Token:", token); // Debugging statement
-      res.redirect(`http://localhost:3000/?token=${token}`);
+      res.redirect(`https://ethaum.vercel.app/?token=${token}`);
     } catch (err) {
       res.status(500).send("Error during authentication");
     }
