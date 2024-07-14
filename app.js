@@ -7,6 +7,7 @@ const passport = require("passport");
 const authService = require("./Controllers/AuthService");
 const passportSetup = require("./config/passport-setup");
 const productRoutes = require("./Routes/Product");
+const PORT = process.env.PORT || 5000;
 
 require("dotenv").config();
 
@@ -104,6 +105,6 @@ app.get("/verify", authService.checkTokenMW, (req, res) => {
 //crud api routes
 app.use("/api/products", productRoutes);
 
-app.listen(5000, function () {
+app.listen(PORT, function () {
   console.log("Express app listening on port 5000!");
 });
