@@ -11,10 +11,5 @@
             "src": "/(.*)",
             "dest": "app.js"
         }
-    ],
-    "functions": {
-        "Controllers/*": {
-            "maxDuration": 30
-        }
-    }
+    ]
 }
