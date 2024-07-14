@@ -60,3 +60,4 @@ typings/
 
 # yarn.lock
 yarn.lock
+.vercel

@@ -4,6 +4,7 @@
   "description": "sample code for node(express), passport(google-oauth2) + jwt token + mongoDB configuration",
   "main": "app.js",
   "scripts": {
+    "build": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon app.js"
   },
