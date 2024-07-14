@@ -4,9 +4,9 @@
   "description": "sample code for node(express), passport(google-oauth2) + jwt token + mongoDB configuration",
   "main": "app.js",
   "scripts": {
-    "build": "nodemon app.js",
+    "build": "echo 'No build step necessary'",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js"
+    "start": "node app.js"
   },
   "author": "Robert Gaspar",
   "license": "ISC",

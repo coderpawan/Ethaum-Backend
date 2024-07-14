@@ -106,5 +106,5 @@ app.get("/verify", authService.checkTokenMW, (req, res) => {
 app.use("/api/products", productRoutes);
 
 app.listen(PORT, function () {
-  console.log("Express app listening on port 5000!");
+  console.log(`Server is running on port ${PORT}`);
 });
