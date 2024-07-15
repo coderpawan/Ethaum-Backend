@@ -8,6 +8,9 @@ const passport = require("passport");
 const authService = require("./Controllers/AuthService");
 const passportSetup = require("./config/passport-setup");
 const productRoutes = require("./Routes/Product");
+const priceplanRoutes = require("./Routes/PricePlan");
+const searchbarRoutes = require("./Routes/Searchbar");
+const testimonialRoutes = require("./Routes/Testimonial");
 const PORT = process.env.PORT || 5000;
 
 require("dotenv").config();
@@ -77,7 +80,7 @@ app.get(
       // Generate token
       const token = authService.signToken(req);
       console.log("Generated Token:", token); // Debugging statement
-      res.redirect(`https://ethaum.vercel.app/?token=${token}`);
+      res.redirect(`http://localhost:3000/?token=${token}`);
     } catch (err) {
       res.status(500).send("Error during authentication");
     }
@@ -96,6 +99,9 @@ app.get("/verify", authService.checkTokenMW, (req, res) => {
 });
 //crud api routes
 app.use("/api/products", productRoutes);
+app.use("/api/searchbar", searchbarRoutes);
+app.use("/api/testimonial", testimonialRoutes);
+app.use("/api/priceplan", priceplanRoutes);
 
 app.listen(PORT, function () {
   console.log(`Server is running on port ${PORT}`);

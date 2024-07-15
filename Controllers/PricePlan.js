@@ -1,4 +1,4 @@
-const Crud = require("../Model/Product");
+const Crud = require("../Model/PricePlan");
 
 // Display All CRUD Data
 const crud_index = (req, res) => {

@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const crudController = require("../Controllers/Product");
+const crudController = require("../Controllers/PricePlan");
 
 router.get("/", crudController.crud_index);
 router.post("/", crudController.crud_create);
