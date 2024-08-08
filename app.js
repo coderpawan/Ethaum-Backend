@@ -15,21 +15,17 @@ const PORT = process.env.PORT || 5000;
 
 require("dotenv").config();
 
-const mongodbUri = process.env.MONGO_URI;
-mongoose.set("useFindAndModify", false);
-mongoose.set("useCreateIndex", true);
-
-mongoose.connect(
-  mongodbUri,
-  {
-    useUnifiedTopology: true,
-    useNewUrlParser: true,
-    serverSelectionTimeoutMS: 30000,
-  },
-  (error) => {
-    if (error) console.log(error);
+const connectDB = async () => {
+  try {
+    await mongoose.connect(process.env.MONGO_URI);
+    console.log(`Successfully connnected to mongoDB 👍`);
+  } catch (error) {
+    console.error(`ERROR: ${error.message}`);
+    process.exit(1);
   }
-);
+};
+
+connectDB();
 
 app.use(function (req, res, next) {
   let allowedOrigins = ["*"]; // list of url-s

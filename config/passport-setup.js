@@ -8,7 +8,7 @@ require("dotenv").config();
 passport.use(
   new GoogleStrategy(
     {
-      callbackURL: "https://ethaum-backend.vercel.app/auth/google/callback/",
+      callbackURL: "https://e-commerce-backend-five-jade.vercel.app/auth/google/callback/",
       clientID: process.env.CLIENT_ID,
       clientSecret: process.env.CLIENT_SECRET,
     },
